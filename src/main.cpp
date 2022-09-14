@@ -3,6 +3,7 @@
 #include <PSDL.h>
 #include <PWindow.h>
 #include <PRenderer.h>
+#include <SDL_image.h>
 
 int main(int argc, char** argv)
 {

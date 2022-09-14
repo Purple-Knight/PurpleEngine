@@ -15,5 +15,5 @@ public:
 
 	PWindow& operator=(const PWindow&) = delete;
 
-	SDL_Window* GetSDLWindow();
+	SDL_Window* GetHandle();
 };

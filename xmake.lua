@@ -1,13 +1,13 @@
 add_rules("mode.debug", "mode.release")
 
-add_requires("libsdl")
+add_requires("libsdl", "libsdl_image")
 
 target("PurpleEngine")
     set_kind("binary")
     add_headerfiles("include/*.h", "include/*.hpp")
     add_includedirs("include")
     add_files("src/*.cpp")
-    add_packages("libsdl")
+    add_packages("libsdl", "libsdl_image")
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io

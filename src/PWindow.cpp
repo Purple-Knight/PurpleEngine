@@ -15,7 +15,7 @@ PWindow::~PWindow()
 	SDL_DestroyWindow(m_window);
 }
 
-SDL_Window* PWindow::GetSDLWindow()
+SDL_Window* PWindow::GetHandle()
 {
 	return m_window;
 }
