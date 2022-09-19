@@ -4,6 +4,7 @@
 #include <PWindow.h>
 #include <PRenderer.h>
 #include <SDL_image.h>
+#include <PTexture.h>
 
 int main(int argc, char** argv)
 {
@@ -16,6 +17,8 @@ int main(int argc, char** argv)
     PSDL psdl;
     PWindow window("PurpleEngine", 1280, 720);
     PRenderer renderer(window);
+
+    PTexture saveFromSir = PTexture::LoadFromFile(renderer, "assets/SaveFromSir.png");
 
     bool isOpen = true;
     while (isOpen)
@@ -32,6 +35,13 @@ int main(int argc, char** argv)
         renderer.SetDrawColor(186, 72, 247, 255); //Purple : (127, 0, 127, 255)
         renderer.Clear();
 
+        SDL_Rect rect;
+        rect.x = 450;
+        rect.y = 350;
+        rect.w = 283;
+        rect.h = 81;
+
+        renderer.RenderCopy(saveFromSir, rect);
         renderer.Present();
     }
 
