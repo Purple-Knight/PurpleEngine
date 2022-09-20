@@ -26,6 +26,16 @@ SDL_Texture* PTexture::GetHandle() const
 	return m_texture;
 }
 
+SDL_Rect PTexture::GetRect() const
+{
+	SDL_Rect rect;
+	rect.x = 0;
+	rect.y = 0;
+	SDL_QueryTexture(m_texture, nullptr, nullptr, &rect.w, &rect.h);
+
+	return rect;
+}
+
 PTexture PTexture::LoadFromFile(PRenderer& renderer, const std::string& path)
 {
 	return LoadFromSurface(renderer, PSurface::LoadFromFile(path));

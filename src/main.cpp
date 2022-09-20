@@ -5,6 +5,7 @@
 #include <PRenderer.h>
 #include <SDL_image.h>
 #include <PTexture.h>
+#include <Sprite.h>
 
 int main(int argc, char** argv)
 {
@@ -18,11 +19,22 @@ int main(int argc, char** argv)
     PWindow window("PurpleEngine", 1280, 720);
     PRenderer renderer(window);
 
-    PTexture saveFromSir = PTexture::LoadFromFile(renderer, "assets/SaveFromSir.png");
+    PTexture runner = PTexture::LoadFromFile(renderer, "assets/runner.png");
+    Sprite sprite(runner);
+    sprite.Resize(256, 256);
+
+    sprite.SetRect(SDL_Rect{ 0, 0, 32, 32 });
+
+    Uint64 lastUpdate = SDL_GetPerformanceCounter();
 
     bool isOpen = true;
     while (isOpen)
     {
+        //Time 
+        Uint64 now = SDL_GetPerformanceCounter();
+        float deltaTime = (float)(now - lastUpdate) / SDL_GetPerformanceFrequency();
+        lastUpdate = now;
+
         //Event Poll
         SDL_Event event;
         while (PSDL::PollEvent(&event))
@@ -35,13 +47,7 @@ int main(int argc, char** argv)
         renderer.SetDrawColor(186, 72, 247, 255); //Purple : (127, 0, 127, 255)
         renderer.Clear();
 
-        SDL_Rect rect;
-        rect.x = 450;
-        rect.y = 350;
-        rect.w = 283;
-        rect.h = 81;
-
-        renderer.RenderCopy(saveFromSir, rect);
+        sprite.Draw(renderer, 147, 257);
         renderer.Present();
     }
 

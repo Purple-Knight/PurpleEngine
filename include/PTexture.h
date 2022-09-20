@@ -16,6 +16,7 @@ public:
 	PTexture& operator=(PTexture&& texture) noexcept;
 
 	SDL_Texture* GetHandle() const;
+	SDL_Rect GetRect() const;
 	static PTexture LoadFromFile(PRenderer& renderer, const std::string& path);
 	static PTexture LoadFromSurface(PRenderer& renderer,const PSurface& surface);
 
