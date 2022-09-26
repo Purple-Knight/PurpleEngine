@@ -1,5 +1,6 @@
 #pragma once
 #include <SDL.h>
+#include <memory>
 
 class PTexture;
 class PWindow;
@@ -19,9 +20,9 @@ public:
 	void Clear();
 	void Present();
 	void SetDrawColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a);
-	void RenderCopy(const PTexture& texture);
-	void RenderCopy(const PTexture& texture, const SDL_Rect& dst);
-	void RenderCopy(const PTexture& texture, const SDL_Rect& src, const SDL_Rect& dst);
+	void RenderCopy(std::shared_ptr<PTexture> texture);
+	void RenderCopy(std::shared_ptr<PTexture> texture, const SDL_Rect& dst);
+	void RenderCopy(std::shared_ptr<PTexture> texture, const SDL_Rect& src, const SDL_Rect& dst);
 
 private:
 	SDL_Renderer* m_renderer;

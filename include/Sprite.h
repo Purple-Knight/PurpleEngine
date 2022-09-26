@@ -1,5 +1,6 @@
 #pragma once
 #include <SDL.h>
+#include <memory>
 
 class PRenderer;
 class PTexture;
@@ -7,8 +8,8 @@ class PTexture;
 class Sprite
 {
 public:
-	Sprite(const PTexture& texture);
-	Sprite(const PTexture& texture, const SDL_Rect& rect);
+	Sprite(std::shared_ptr<PTexture> texture);
+	Sprite(std::shared_ptr<PTexture>, const SDL_Rect& rect);
 	Sprite(const Sprite&) = default;
 	Sprite(Sprite&&) = default;
 	~Sprite() = default;
@@ -26,7 +27,7 @@ public:
 	void SetRect(SDL_Rect rect);
 
 private:
-	const PTexture& m_texture;
+	std::shared_ptr<PTexture> m_texture;
 	SDL_Rect m_rect;
 	int m_width;
 	int m_height;

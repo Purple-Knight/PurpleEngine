@@ -44,17 +44,17 @@ void PRenderer::SetDrawColor(Uint8 r, Uint8 g, Uint8 b, Uint8 a)
 	SDL_SetRenderDrawColor(m_renderer, r, g, b, a);
 }
 
-void PRenderer::RenderCopy(const PTexture& texture)
+void PRenderer::RenderCopy(std::shared_ptr<PTexture> texture)
 {
-	SDL_RenderCopy(m_renderer, texture.GetHandle(), nullptr, nullptr);
+	SDL_RenderCopy(m_renderer, texture->GetHandle(), nullptr, nullptr);
 }
 
-void PRenderer::RenderCopy(const PTexture& texture, const SDL_Rect& dst)
+void PRenderer::RenderCopy(std::shared_ptr<PTexture> texture, const SDL_Rect& dst)
 {
-	SDL_RenderCopy(m_renderer, texture.GetHandle(), nullptr, &dst);
+	SDL_RenderCopy(m_renderer, texture->GetHandle(), nullptr, &dst);
 }
 
-void PRenderer::RenderCopy(const PTexture& texture, const SDL_Rect& src, const SDL_Rect& dst)
+void PRenderer::RenderCopy(std::shared_ptr<PTexture> texture, const SDL_Rect& src, const SDL_Rect& dst)
 {
-	SDL_RenderCopy(m_renderer, texture.GetHandle(), &src, &dst);
+	SDL_RenderCopy(m_renderer, texture->GetHandle(), &src, &dst);
 }

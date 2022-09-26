@@ -2,12 +2,12 @@
 #include "PRenderer.h"
 #include "PTexture.h"
 
-Sprite::Sprite(const PTexture & texture) :
-	Sprite(texture, texture.GetRect())
+Sprite::Sprite(std::shared_ptr<PTexture> texture) :
+	Sprite(texture, texture->GetRect())
 {
 }
 
-Sprite::Sprite(const PTexture& texture, const SDL_Rect& rect) :
+Sprite::Sprite(std::shared_ptr<PTexture> texture, const SDL_Rect& rect) :
 	m_texture(texture),
 	m_rect(rect),
 	m_width(rect.w),

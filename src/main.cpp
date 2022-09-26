@@ -6,6 +6,7 @@
 #include <SDL_image.h>
 #include <PTexture.h>
 #include <Sprite.h>
+#include <ResourceManager.h>
 
 int main(int argc, char** argv)
 {
@@ -18,11 +19,12 @@ int main(int argc, char** argv)
     PSDL psdl;
     PWindow window("PurpleEngine", 1280, 720);
     PRenderer renderer(window);
+    ResourceManager& resourceManager = ResourceManager::Instance();
 
-    PTexture runner = PTexture::LoadFromFile(renderer, "assets/runner.png");
+    std::shared_ptr<PTexture> runner = resourceManager.GetTexture(renderer, "assets/runner.png");
     Sprite sprite(runner);
-    sprite.Resize(256, 256);
 
+    sprite.Resize(256, 256);
     sprite.SetRect(SDL_Rect{ 0, 0, 32, 32 });
 
     Uint64 lastUpdate = SDL_GetPerformanceCounter();
