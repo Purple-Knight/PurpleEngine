@@ -1,12 +1,10 @@
 #include <iostream>
-#include <sdl.h>
 #include <PSDL.h>
 #include <PWindow.h>
 #include <PRenderer.h>
-#include <SDL_image.h>
-#include <PTexture.h>
-#include <Sprite.h>
 #include <ResourceManager.h>
+#include <Sprite.h>
+#include <PTexture.h>
 
 int main(int argc, char** argv)
 {

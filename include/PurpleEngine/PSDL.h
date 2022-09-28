@@ -1,7 +1,8 @@
 #pragma once
+#include <PurpleEngine.h>
 #include <SDL.h>
 
-class PSDL
+class PURPLE_ENGINE_API PSDL
 {
 public:
 	PSDL();

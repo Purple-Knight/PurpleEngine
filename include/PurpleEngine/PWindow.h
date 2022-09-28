@@ -1,8 +1,9 @@
 #pragma once
+#include <PurpleEngine.h>
 #include <SDL.h>
 #include <String>
 
-class PWindow
+class PURPLE_ENGINE_API PWindow
 {
 public:
 	PWindow(const std::string& title, int width, int height, Uint32 flags = 0);

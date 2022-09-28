@@ -1,4 +1,5 @@
 #pragma once
+#include <PurpleEngine.h>
 #include <map>
 #include <string>
 #include <memory>
@@ -6,7 +7,7 @@
 class PTexture;
 class PRenderer;
 
-class ResourceManager
+class PURPLE_ENGINE_API ResourceManager
 {
 public:
 	ResourceManager(const ResourceManager&) = delete;

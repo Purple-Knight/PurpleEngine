@@ -1,11 +1,12 @@
 #pragma once
+#include <PurpleEngine.h>
 #include <SDL.h>
 #include <memory>
 
 class PTexture;
 class PWindow;
 
-class PRenderer
+class PURPLE_ENGINE_API PRenderer
 {
 public:
 	PRenderer(PWindow& window, int index = 0, Uint32 flags = 0);

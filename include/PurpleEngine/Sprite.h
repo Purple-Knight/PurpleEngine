@@ -1,11 +1,12 @@
 #pragma once
+#include <PurpleEngine.h>
 #include <SDL.h>
 #include <memory>
 
 class PRenderer;
 class PTexture;
 
-class Sprite
+class PURPLE_ENGINE_API Sprite
 {
 public:
 	Sprite(std::shared_ptr<PTexture> texture);

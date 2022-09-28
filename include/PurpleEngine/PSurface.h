@@ -1,9 +1,9 @@
 #pragma once
-#pragma once
+#include <PurpleEngine.h>
 #include <SDL.h>
 #include <string>
 
-class PSurface
+class PURPLE_ENGINE_API PSurface
 {
 public:
 	PSurface(const PSurface&) = delete;

@@ -1,11 +1,12 @@
 #pragma once
+#include <PurpleEngine.h>
 #include <SDL.h>
 #include <string>
 
 class PRenderer;
 class PSurface;
 
-class PTexture
+class PURPLE_ENGINE_API PTexture
 {
 public:
 	PTexture(const PTexture&) = delete;
