@@ -5,6 +5,8 @@
 #include <ResourceManager.h>
 #include <Sprite.h>
 #include <PTexture.h>
+#include <Vector2.h>
+#include <Transform.h>
 
 int main(int argc, char** argv)
 {
