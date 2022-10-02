@@ -17,21 +17,21 @@ public:
 	Vector2& operator=(const Vector2&) = default;
 	Vector2& operator=(Vector2&&) = default;
 
-	inline Vector2<T>& operator+(Vector2<T> vec) { return Vector2<T>(x + vec.x, y + vec.y); }
-	inline Vector2<T>& operator+=(Vector2<T> vec) { x += vec.x; y += vec.y; return *this; }
+	inline Vector2<T>& operator+(const Vector2<T>& vec) { return Vector2<T>(x + vec.x, y + vec.y); }
+	inline Vector2<T>& operator+=(const Vector2<T>& vec) { x += vec.x; y += vec.y; return *this; }
 
-	inline Vector2<T>& operator-(Vector2<T> vec) { return Vector2<T>(x - vec.x, y - vec.y); }
-	inline Vector2<T>& operator-=(Vector2<T> vec) { x -= vec.x; y -= vec.y; return *this; }
+	inline Vector2<T>& operator-(const Vector2<T>& vec) { return Vector2<T>(x - vec.x, y - vec.y); }
+	inline Vector2<T>& operator-=(const Vector2<T>& vec) { x -= vec.x; y -= vec.y; return *this; }
 
-	inline Vector2<T>& operator*(int scalar) { return Vector2<T>(x * scalar, y * scalar); }
-	inline Vector2<T>& operator*=(int scalar) { x *= scalar; y *= scalar; return *this; }
-	inline Vector2<T>& operator*(float scalar) { return Vector2<T>(x * scalar, y * scalar); }
-	inline Vector2<T>& operator*=(float scalar) { x *= scalar; y *= scalar; return *this; }
+	inline Vector2<T>& operator*(const int& scalar) { return Vector2<T>(x * scalar, y * scalar); }
+	inline Vector2<T>& operator*=(const int& scalar) { x *= scalar; y *= scalar; return *this; }
+	inline Vector2<T>& operator*(const float& scalar) { return Vector2<T>(x * scalar, y * scalar); }
+	inline Vector2<T>& operator*=(const float& scalar) { x *= scalar; y *= scalar; return *this; }
 
-	inline Vector2<T>& operator/(int scalar) { return Vector2<T>(x / scalar, y / scalar); }
-	inline Vector2<T>& operator/=(int scalar) { x /= scalar; y /= scalar; return *this; }
-	inline Vector2<T>& operator/(float scalar) { return Vector2<T>(x / scalar, y / scalar); }
-	inline Vector2<T>& operator/=(float scalar) { x /= scalar; y /= scalar; return *this; }
+	inline Vector2<T>& operator/(const int& scalar) { return Vector2<T>(x / scalar, y / scalar); }
+	inline Vector2<T>& operator/=(const int& scalar) { x /= scalar; y /= scalar; return *this; }
+	inline Vector2<T>& operator/(const float& scalar) { return Vector2<T>(x / scalar, y / scalar); }
+	inline Vector2<T>& operator/=(const float& scalar) { x /= scalar; y /= scalar; return *this; }
 };
 
 template <class T>
