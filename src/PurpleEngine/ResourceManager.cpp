@@ -32,7 +32,7 @@ std::shared_ptr<PTexture> ResourceManager::GetTexture(PRenderer& renderer, const
 	}
 	else
 	{
-		std::cout << "Exiting Texture : " << path << std::endl;
+		std::cout << "Reusing Texture : " << path << std::endl;
 		texture = m_textures[path];
 	}
 

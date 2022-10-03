@@ -1,5 +1,4 @@
 #pragma once
-#include <PurpleEngine.h>
 
 template <class T> 
 class Vector2
