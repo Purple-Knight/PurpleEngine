@@ -24,8 +24,14 @@ int main(int argc, char** argv)
     ResourceManager& resourceManager = ResourceManager::Instance();
     InputManager& inputManager = InputManager::Instance();
 
+    //entt
+    entt::registry registry;
+    entt::entity entity = registry.create();
+
+    //Model
     Model house("PurpleGame/assets/House.model");
 
+    //Srite
     std::shared_ptr<PTexture> runner = resourceManager.GetTexture(renderer, "PurpleGame/assets/runner.png");
     Sprite sprite(runner);
 
@@ -34,6 +40,7 @@ int main(int argc, char** argv)
     Transform spriteT;
     spriteT.SetPosition(120, 300);
 
+    //Input 
     inputManager.BindKeyPressed(SDLK_RIGHT, "Right");
     inputManager.BindKeyPressed(SDLK_LEFT, "Left");
 
