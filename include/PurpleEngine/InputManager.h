@@ -1,7 +1,7 @@
 #pragma once
 #include <PurpleEngine.h>
 #include <SDL.h>
-#include <map>
+#include <unordered_map>
 #include <string>
 #include <functional>
 
@@ -16,12 +16,12 @@ public:
 	InputManager& operator=(InputManager&&) = delete;
 
 	static InputManager& Instance();
-	void BindKeyPressed(SDL_Keycode key, std::string action);
+	void BindKeyPressed(SDL_KeyCode key, std::string action);
 	void OnAction(std::string action, std::function<void()> func);
-	void CheckInput(SDL_Keycode key);
+	void CheckInput(SDL_KeyCode key);
 
 private:
 	InputManager();
-	std::map<SDL_Keycode, std::string> keyBinds;
-	std::map<std::string, std::function<void()>> actionBinds;
+	std::unordered_map<SDL_KeyCode, std::string> keyBinds;
+	std::unordered_map<std::string, std::function<void()>> actionBinds;
 };

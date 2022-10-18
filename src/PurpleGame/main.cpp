@@ -8,22 +8,25 @@
 #include <PTexture.h>
 #include <Vector2.h>
 #include <Transform.h>
+#include <Model.h>
+#include <imgui.h>
+#include <imgui_impl_sdl.h>
+#include <imgui_impl_sdlrenderer.h>
+#include <entt/entt.hpp>
 
 int main(int argc, char** argv)
 {
-    std::cout << "       _____                 _       _____            _" << std::endl;
-    std::cout << "      |  _  | _ _  ___  ___ | | ___ |   __| ___  ___ |_| ___  ___" << std::endl;
-    std::cout << "      |   __|| | ||  _|| . || || -_||   __||   || . || ||   || -_|" << std::endl;
-    std::cout << "      |__|   |___||_|  |  _||_||___||_____||_|_||_  ||_||_|_||___|" << std::endl;
-    std::cout << "                       |_|                      |___|" << std::endl;
 
     PSDL psdl;
     PWindow window("PurpleEngine", 1280, 720);
     PRenderer renderer(window);
+
     ResourceManager& resourceManager = ResourceManager::Instance();
     InputManager& inputManager = InputManager::Instance();
 
-    std::shared_ptr<PTexture> runner = resourceManager.GetTexture(renderer, "assets/runner.png");
+    Model house("PurpleGame/assets/House.model");
+
+    std::shared_ptr<PTexture> runner = resourceManager.GetTexture(renderer, "PurpleGame/assets/runner.png");
     Sprite sprite(runner);
 
     sprite.Resize(256, 256);
@@ -54,8 +57,8 @@ int main(int argc, char** argv)
             if (event.type == SDL_QUIT)
                 isOpen = false;
 
-            if (event.type == SDL_KEYDOWN)
-                inputManager.CheckInput(event.key.keysym.sym);
+            //if (event.type == SDL_KEYDOWN)
+                //inputManager.CheckInput(event.key.keysym.sym);
         }
 
         //Render a frame
